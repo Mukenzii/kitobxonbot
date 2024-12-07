@@ -19,4 +19,5 @@ def webhook(request):
         update = types.Update.de_json(json_str)
         bot.process_new_updates([update])
         return JsonResponse({"status": "success"})
-    return JsonResponse({"error": "Invalid request"})
+    else:
+        return JsonResponse({"error": "Invalid request"})
